@@ -12,18 +12,18 @@ public class InsertionSort {
 			}
 		}
 	}
-	
+
 	public static void swap(int[] arr, int i, int j) {
 		arr[i] = arr[i] ^ arr[j];
 		arr[j] = arr[i] ^ arr[j];
 		arr[i] = arr[i] ^ arr[j];
 	}
-	
+
 	// for test
 	public static void comparator(int[] arr) {
 		Arrays.sort(arr);
 	}
-	
+
 	// for test
 	public static int[] generateRandomArray(int maxSize, int maxValue) {
 		int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
@@ -32,7 +32,7 @@ public class InsertionSort {
 		}
 		return arr;
 	}
-	
+
 	// for test
 	public static int[] copyArray(int[] arr) {
 		if (arr == null) {
@@ -44,7 +44,7 @@ public class InsertionSort {
 		}
 		return res;
 	}
-	
+
 	// for test
 	public static boolean isEqual(int[] arr1, int[] arr2) {
 		if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
@@ -63,7 +63,7 @@ public class InsertionSort {
 		}
 		return true;
 	}
-	
+
 	// for test
 	public static void printArray(int[] arr) {
 		if (arr == null) {
@@ -74,7 +74,7 @@ public class InsertionSort {
 		}
 		System.out.println();
 	}
-	
+
 	// for test
 	public static void main(String[] args) {
 		int testTime = 500000;
@@ -92,11 +92,11 @@ public class InsertionSort {
 			}
 		}
 		System.out.println(succeed ? "Nice!" : "Fucking fucked!");
-		
+
 		int[] arr = generateRandomArray(maxSize, maxValue);
 		printArray(arr);
 		insertionSort(arr);
 		printArray(arr);
 	}
-	
+
 }

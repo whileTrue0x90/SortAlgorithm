@@ -8,7 +8,7 @@ public class MergeSort {
 		}
 		mergeSort(arr, 0, arr.length - 1);
 	}
-	
+
 	public static void mergeSort(int[] arr, int l, int r) {
 		if (l == r) {
 			return;
@@ -18,7 +18,7 @@ public class MergeSort {
 		mergeSort(arr, mid + 1, r);
 		merge(arr, l, mid, r);
 	}
-	
+
 	public static void merge(int[] arr, int l, int m, int r) {
 		int[] help = new int[r - l + 1];
 		int i = 0;
@@ -37,12 +37,12 @@ public class MergeSort {
 			arr[l + i] = help[i];
 		}
 	}
-	
+
 	// for test
 	public static void comparator(int[] arr) {
 		Arrays.sort(arr);
 	}
-	
+
 	// for test
 	public static int[] generateRandomArray(int maxSize, int maxValue) {
 		int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
@@ -51,7 +51,7 @@ public class MergeSort {
 		}
 		return arr;
 	}
-	
+
 	// for test
 	public static int[] copyArray(int[] arr) {
 		if (arr == null) {
@@ -63,7 +63,7 @@ public class MergeSort {
 		}
 		return res;
 	}
-	
+
 	// for test
 	public static boolean isEqual(int[] arr1, int[] arr2) {
 		if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
@@ -82,7 +82,7 @@ public class MergeSort {
 		}
 		return true;
 	}
-	
+
 	// for test
 	public static void printArray(int[] arr) {
 		if (arr == null) {
@@ -93,7 +93,7 @@ public class MergeSort {
 		}
 		System.out.println();
 	}
-	
+
 	// for test
 	public static void main(String[] args) {
 		int testTime = 500000;
@@ -113,12 +113,12 @@ public class MergeSort {
 			}
 		}
 		System.out.println(succeed ? "Nice!" : "Fucking fucked!");
-		
+
 		int[] arr = generateRandomArray(maxSize, maxValue);
 		printArray(arr);
 		mergeSort(arr);
 		printArray(arr);
-	
+
 	}
 
 }

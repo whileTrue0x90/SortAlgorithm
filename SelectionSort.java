@@ -14,18 +14,18 @@ public class SelectionSort {
 			swap(arr, i, minIndex);
 		}
 	}
-	
+
 	public static void swap(int[] arr, int i, int j) {
 		int tmp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = tmp;
 	}
-	
+
 	// for test
 	public static void comparator(int[] arr) {
 		Arrays.sort(arr);
 	}
-	
+
 	// for test
 	public static int[] generateRandomArray(int maxSize, int maxValue) {
 		int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
@@ -34,7 +34,7 @@ public class SelectionSort {
 		}
 		return arr;
 	}
-	
+
 	// for test
 	public static int[] copyArray(int[] arr) {
 		if (arr == null) {
@@ -46,7 +46,7 @@ public class SelectionSort {
 		}
 		return res;
 	}
-	
+
 	// for test
 	public static boolean isEqual(int[] arr1, int[] arr2) {
 		if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
@@ -65,7 +65,7 @@ public class SelectionSort {
 		}
 		return true;
 	}
-	
+
 	// for test
 	public static void printArray(int[] arr) {
 		if (arr == null) {
@@ -76,7 +76,7 @@ public class SelectionSort {
 		}
 		System.out.println();
 	}
-	
+
 	// for test
 	public static void main(String[] args) {
 		int testTime = 500000;
@@ -96,7 +96,7 @@ public class SelectionSort {
 			}
 		}
 		System.out.println(succeed ? "Nice!" : "Fucking fucked!");
-		
+
 		int[] arr = generateRandomArray(maxSize, maxValue);
 		printArray(arr);
 		selectionSort(arr);

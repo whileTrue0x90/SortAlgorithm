@@ -16,14 +16,14 @@ public class HeapSort {
 			swap(arr, 0, --size);
 		}
 	}
-	
+
 	public static void heapInsert(int[] arr, int index) {
 		while (arr[index] > arr[(index - 1) / 2]) {
-			swap(arr, index, (index - 1) /2);
-			index = (index - 1)/2 ;
+			swap(arr, index, (index - 1) / 2);
+			index = (index - 1) / 2;
 		}
 	}
-	
+
 	public static void heapify(int[] arr, int index, int size) {
 		int left = index * 2 + 1;
 		while (left < size) {
@@ -37,18 +37,18 @@ public class HeapSort {
 			left = index * 2 + 1;
 		}
 	}
-	
+
 	public static void swap(int[] arr, int i, int j) {
 		int tmp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = tmp;
 	}
-	
+
 	// for test
 	public static void comparator(int[] arr) {
 		Arrays.sort(arr);
 	}
-	
+
 	// for test
 	public static int[] generateRandomArray(int maxSize, int maxValue) {
 		int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
@@ -57,7 +57,7 @@ public class HeapSort {
 		}
 		return arr;
 	}
-	
+
 	// for test
 	public static int[] copyArray(int[] arr) {
 		if (arr == null) {
@@ -69,7 +69,7 @@ public class HeapSort {
 		}
 		return res;
 	}
-	
+
 	// for test
 	public static boolean isEqual(int[] arr1, int[] arr2) {
 		if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
@@ -88,7 +88,7 @@ public class HeapSort {
 		}
 		return true;
 	}
-	
+
 	// for test
 	public static void printArray(int[] arr) {
 		if (arr == null) {
@@ -99,7 +99,7 @@ public class HeapSort {
 		}
 		System.out.println();
 	}
-	
+
 	// for test
 	public static void main(String[] args) {
 		int testTime = 500000;
@@ -117,7 +117,7 @@ public class HeapSort {
 			}
 		}
 		System.out.println(succeed ? "Nice!" : "Fucking fucked!");
-		
+
 		int[] arr = generateRandomArray(maxSize, maxValue);
 		printArray(arr);
 		heapSort(arr);

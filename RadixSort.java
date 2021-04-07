@@ -9,7 +9,7 @@ public class RadixSort {
 		}
 		radixSort(arr, 0, arr.length - 1, maxbits(arr));
 	}
-	
+
 	public static int maxbits(int[] arr) {
 		int max = Integer.MIN_VALUE;
 		for (int i = 0; i < arr.length; i++) {
@@ -22,11 +22,11 @@ public class RadixSort {
 		}
 		return res;
 	}
-	
+
 	public static void radixSort(int[] arr, int begin, int end, int digit) {
 		final int radix = 10;
 		int i = 0, j = 0;
-		
+
 		int[] bucket = new int[end - begin + 1];
 		for (int d = 1; d <= digit; d++) {
 			int[] count = new int[radix];
@@ -47,16 +47,16 @@ public class RadixSort {
 			}
 		}
 	}
-	
+
 	public static int getDigit(int x, int d) {
 		return ((x / ((int) Math.pow(10, d - 1))) % 10);
 	}
-	
+
 	// for test
 	public static void comparator(int[] arr) {
 		Arrays.sort(arr);
 	}
-	
+
 	// for test
 	public static int[] generateRandomArray(int maxSize, int maxValue) {
 		int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
@@ -65,7 +65,7 @@ public class RadixSort {
 		}
 		return arr;
 	}
-	
+
 	// for test
 	public static int[] copyArray(int[] arr) {
 		if (arr == null) {
@@ -77,7 +77,7 @@ public class RadixSort {
 		}
 		return res;
 	}
-	
+
 	// for test
 	public static boolean isEqual(int[] arr1, int[] arr2) {
 		if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
@@ -96,7 +96,7 @@ public class RadixSort {
 		}
 		return true;
 	}
-	
+
 	// for test
 	public static void printArray(int[] arr) {
 		if (arr == null) {
@@ -107,7 +107,7 @@ public class RadixSort {
 		}
 		System.out.println();
 	}
-	
+
 	// for test
 	public static void main(String[] args) {
 		int testTime = 500000;
@@ -127,12 +127,12 @@ public class RadixSort {
 			}
 		}
 		System.out.println(succeed ? "Nice!" : "Fucking fucked!");
-		
+
 		int[] arr = generateRandomArray(maxSize, maxValue);
 		printArray(arr);
 		radixSort(arr);
 		printArray(arr);
-	
+
 	}
 
 }

@@ -8,7 +8,7 @@ public class QuickSort {
 		}
 		quickSort(arr, 0, arr.length - 1);
 	}
-	
+
 	public static void quickSort(int[] arr, int l, int r) {
 		if (l < r) {
 			swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
@@ -17,7 +17,7 @@ public class QuickSort {
 			quickSort(arr, p[1] + 1, r);
 		}
 	}
-	
+
 	public static int[] partition(int[] arr, int l, int r) {
 		int less = l - 1;
 		int more = r;
@@ -33,18 +33,18 @@ public class QuickSort {
 		swap(arr, more, r);
 		return new int[] { less + 1, more };
 	}
-	
+
 	public static void swap(int[] arr, int i, int j) {
 		int tmp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = tmp;
 	}
-	
+
 	// for test
 	public static void comparator(int[] arr) {
 		Arrays.sort(arr);
 	}
-	
+
 	// for test
 	public static int[] generateRandomArray(int maxSize, int maxValue) {
 		int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
@@ -53,7 +53,7 @@ public class QuickSort {
 		}
 		return arr;
 	}
-	
+
 	// for test
 	public static int[] copyArray(int[] arr) {
 		if (arr == null) {
@@ -65,7 +65,7 @@ public class QuickSort {
 		}
 		return res;
 	}
-	
+
 	// for test
 	public static boolean isEqual(int[] arr1, int[] arr2) {
 		if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
@@ -84,7 +84,7 @@ public class QuickSort {
 		}
 		return true;
 	}
-	
+
 	// for test
 	public static void printArray(int[] arr) {
 		if (arr == null) {
@@ -95,7 +95,7 @@ public class QuickSort {
 		}
 		System.out.println();
 	}
-	
+
 	// for test
 	public static void main(String[] args) {
 		int testTime = 500000;
@@ -103,24 +103,24 @@ public class QuickSort {
 		int maxValue = 100;
 		boolean succeed = true;
 		for (int i = 0; i < testTime; i++) {
-		int[] arr1 = generateRandomArray(maxSize, maxValue);
-		int[] arr2 = copyArray(arr1);
-		quickSort(arr1);
-		comparator(arr2);
-		if (!isEqual(arr1, arr2)) {
-			succeed = false;
-			printArray(arr1);
-			printArray(arr2);
-			break;
-		}
+			int[] arr1 = generateRandomArray(maxSize, maxValue);
+			int[] arr2 = copyArray(arr1);
+			quickSort(arr1);
+			comparator(arr2);
+			if (!isEqual(arr1, arr2)) {
+				succeed = false;
+				printArray(arr1);
+				printArray(arr2);
+				break;
+			}
 		}
 		System.out.println(succeed ? "Nice!" : "Fucking fucked!");
-		
+
 		int[] arr = generateRandomArray(maxSize, maxValue);
 		printArray(arr);
 		quickSort(arr);
 		printArray(arr);
-	
+
 	}
 
 }
